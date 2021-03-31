@@ -1,0 +1,41 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/mystyle.css">
+</head>
+<div class = "header">
+    <img src="/images/CarYard2.png" class="center">
+</div>
+<div class="topnav">
+    <a href="/"> About Us </a>
+    <a href="/pictures">Browse Pictures</a>
+    <a class="float-right" href="/pictures/add" title="Add a New Picture">Add a Picture</a>
+</div>
+<body>
+<% if (messages.error) { %>
+    <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+<% } %>
+<div class="card-header-center">
+    Add a new picture
+</div>
+<div class="card-body">
+    <form action="/pictures/add" method="post">
+        <div class="form-group">
+            <label>Image link:</label>
+            <input type="text" class="form-control" name="imagelink" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea class="form-control" name="description" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-info" value="Add"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>
